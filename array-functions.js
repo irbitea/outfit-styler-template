@@ -1,17 +1,17 @@
 // 1. forEach – izpilda funkciju katram elementam un izmaina oriģinālo masīvu
 const augli = ['ābols', 'banāns', 'ķirsis'];
 
-augli.forEach((aug) => {
-    console.log('Auglis:', aug);
+augli.forEach(aug => {
+  console.log('Auglis:', aug);
 });
 
 // 2. map – pārveido katru elementu un izveido jaunu masīvu
 const skaitli = [1, 2, 3];
-const dubultoti = skaitli.map((n) => n * 2);
+const dubultoti = skaitli.map(n => n * 2);
 console.log('Dubultoti skaitļi:', dubultoti); // [2, 4, 6]
 
 // 3. filter – filtrē elementus pēc nosacījuma
-const paraSkaitli = skaitli.filter((n) => );
+const paraSkaitli = skaitli.filter(n => n % 2 === 0);
 console.log('Pāra skaitļi:', paraSkaitli); // [2]
 
 // 4. reduce – reducē masīvu uz vienu vērtību (piemēram, summu) jeb ļauj saskaitīt visas vērtības masīvā
@@ -27,16 +27,16 @@ console.log('Summa:', summa); // 6
 // initialValue: sākotnējā vērtība (ļoti ieteicams to norādīt)
 
 // // 5. find – atrod pirmo atbilstošo elementu
-const pirmaisB = augli.find((aug) => aug.startsWith('b'));
+const pirmaisB = augli.find(aug => aug.startsWith('b'));
 console.log('Pirmais ar b:', pirmaisB); // "banāns"
 
 // 6. some – pārbauda, vai vismaz viens elements atbilst nosacījumam
 const vecumi = [15, 18, 22];
-const irPilngadigs = vecumi.some((v) => v >= 18);
+const irPilngadigs = vecumi.some(v => v >= 18);
 console.log('Ir vismaz viens pilngadīgs:', irPilngadigs); // true
 
 // 7. every – pārbauda, vai visi elementi atbilst nosacījumam
-const visiPilngadigi = vecumi.every((v) => v >= 18);
+const visiPilngadigi = vecumi.every(v => v >= 18);
 console.log('Visi pilngadīgi:', visiPilngadigi); // false
 
 // 8. includes – pārbauda, vai masīvs satur konkrētu vērtību
@@ -49,8 +49,8 @@ console.log('Sakārtoti skaitļi:', nesakartoti); // [1, 5, 10]
 
 // 10. flat – pārveido masīvu, kas satur vairākus masīvus, uz vienu kopēju masīvu
 const ligzdots = [1, [2, 3], [4, [5]]];
-console.log('1. līmenis:', ligzdots.flat());      // [1, 2, 3, 4, [5]]
-console.log('2. līmenis:', ligzdots.flat(2));     // [1, 2, 3, 4, 5]
+console.log('1. līmenis:', ligzdots.flat()); // [1, 2, 3, 4, [5]]
+console.log('2. līmenis:', ligzdots.flat(2)); // [1, 2, 3, 4, 5]
 
 // 11. slice – izgriež daļu no masīva (neizmaina oriģinālu)
 const burti = ['a', 'b', 'c', 'd'];
@@ -61,5 +61,8 @@ console.log('Slice rezultāts:', daļa); // ['b', 'c']
 burti.splice(2, 1); // izņem 'c'
 console.log('Pēc splice:', burti); // ['a', 'b', 'd']
 
-
-fetch('https://restcountries.com/v3.1/all').then((response) => { if (response.ok) return response.json() }).then((value) => console.log(value))
+fetch('https://restcountries.com/v3.1/all')
+  .then(response => {
+    if (response.ok) return response.json();
+  })
+  .then(value => console.log(value));
